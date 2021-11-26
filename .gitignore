@@ -1,0 +1,8 @@
+.idea/
+venv/
+.pytest_cache/
+doubly_linked_list/__pycache__/
+lru_cache/__pycache__/
+tests/doubly_linked_list/__pycache__/
+tests/lru_cache/__pycache__/
+*.pyc
