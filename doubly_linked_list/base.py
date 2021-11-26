@@ -5,6 +5,9 @@ class Node:
         self.prev = _prev
         self.next = _next
 
+    def __eq__(self, other):
+        return self.key == other.key and self.value == other.value
+
 
 class DoublyLinkedList:
     def __init__(self):
@@ -14,9 +17,13 @@ class DoublyLinkedList:
         self.size = 0
 
     def get_head(self) -> Node:
+        assert not self.is_empty()
+
         return self.dummy_head.next
 
     def get_tail(self) -> Node:
+        assert not self.is_empty()
+
         return self.tail
 
     def __len__(self) -> int:
@@ -89,5 +96,7 @@ class DoublyLinkedList:
         _prev.next = _next
         if _next is not None:
             _next.prev = _prev
+        else:
+            self.tail = _prev
 
         self.size -= 1
